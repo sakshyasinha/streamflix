@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core Colors */
+    --color-background: #141414; /* deep-charcoal */
+    --color-foreground: #FFFFFF; /* white */
+    --color-border: rgba(255, 255, 255, 0.1); /* white-10 */
+    --color-input: #1F1F1F; /* gray-900 */
+    --color-ring: #E50914; /* red-600 */
+    
+    /* Card Colors */
+    --color-card: #1F1F1F; /* gray-900 */
+    --color-card-foreground: #FFFFFF; /* white */
+    
+    /* Popover Colors */
+    --color-popover: #1F1F1F; /* gray-900 */
+    --color-popover-foreground: #FFFFFF; /* white */
+    
+    /* Muted Colors */
+    --color-muted: #564D4D; /* warm-charcoal */
+    --color-muted-foreground: #B3B3B3; /* gray-400 */
+    
+    /* Primary Colors */
+    --color-primary: #E50914; /* red-600 */
+    --color-primary-foreground: #FFFFFF; /* white */
+    
+    /* Secondary Colors */
+    --color-secondary: #564D4D; /* warm-charcoal */
+    --color-secondary-foreground: #FFFFFF; /* white */
+    
+    /* Destructive Colors */
+    --color-destructive: #F40612; /* red-500 */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    
+    /* Accent Colors */
+    --color-accent: #FFD700; /* gold */
+    --color-accent-foreground: #141414; /* deep-charcoal */
+    
+    /* Success Colors */
+    --color-success: #46D369; /* green-500 */
+    --color-success-foreground: #FFFFFF; /* white */
+    
+    /* Warning Colors */
+    --color-warning: #FFB800; /* amber-500 */
+    --color-warning-foreground: #141414; /* deep-charcoal */
+    
+    /* Error Colors */
+    --color-error: #F40612; /* red-500 */
+    --color-error-foreground: #FFFFFF; /* white */
+  }
+
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Custom shadow utilities */
+  .shadow-elevation-1 {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .shadow-elevation-2 {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .shadow-elevation-3 {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Hover scale animation */
+  .hover-scale {
+    transition: transform 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  /* Content preview hover */
+  .content-preview-hover {
+    transition: transform 200ms cubic-bezier(0.4, 0.0, 0.2, 1), box-shadow 200ms cubic-bezier(0.4, 0.0, 0.2, 1);
+  }
+  
+  .content-preview-hover:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Shimmer loading effect */
+  .shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+}
