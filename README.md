@@ -1,100 +1,116 @@
-# React
+🎬 Streamflix
+Streamflix is a full-stack movie recommendation web application combining a modern React frontend with a Python-based backend powered by a machine learning recommendation system.
 
-A modern React-based project utilizing the latest frontend technologies and tools for building responsive web applications.
+🚀 Features
+🔧 Frontend (React)
+React 18 – Fast, modern UI
 
-## 🚀 Features
+Vite – Blazing-fast dev server and builds
 
-- **React 18** - React version with improved rendering and concurrent features
-- **Vite** - Lightning-fast build tool and development server
-- **Redux Toolkit** - State management with simplified Redux setup
-- **TailwindCSS** - Utility-first CSS framework with extensive customization
-- **React Router v6** - Declarative routing for React applications
-- **Data Visualization** - Integrated D3.js and Recharts for powerful data visualization
-- **Form Management** - React Hook Form for efficient form handling
-- **Animation** - Framer Motion for smooth UI animations
-- **Testing** - Jest and React Testing Library setup
+Redux Toolkit – Simplified state management
 
-## 📋 Prerequisites
+React Router v6 – Declarative routing
 
-- Node.js (v14.x or higher)
-- npm or yarn
+Tailwind CSS – Utility-first styling
 
-## 🛠️ Installation
+Framer Motion – Smooth UI animations
 
-1. Install dependencies:
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
-   
-2. Start the development server:
-   ```bash
-   npm start
-   # or
-   yarn start
-   ```
+Recharts / D3.js – Visual analytics & charts
 
-## 📁 Project Structure
+React Hook Form – Form validation and handling
 
-```
-react_app/
-├── public/             # Static assets
-├── src/
-│   ├── components/     # Reusable UI components
-│   ├── pages/          # Page components
-│   ├── styles/         # Global styles and Tailwind configuration
-│   ├── App.jsx         # Main application component
-│   ├── Routes.jsx      # Application routes
-│   └── index.jsx       # Application entry point
-├── .env                # Environment variables
-├── index.html          # HTML template
-├── package.json        # Project dependencies and scripts
-├── tailwind.config.js  # Tailwind CSS configuration
-└── vite.config.js      # Vite configuration
-```
+Jest + RTL – Testing support out of the box
 
-## 🧩 Adding Routes
+🧠 Backend (Python + ML)
+Flask – Lightweight backend API
 
-To add new routes to the application, update the `Routes.jsx` file:
+Pandas & Scikit-learn – Data handling and ML
 
-```jsx
-import { useRoutes } from "react-router-dom";
-import HomePage from "pages/HomePage";
-import AboutPage from "pages/AboutPage";
+Content-based Filtering – Recommends similar movies
 
-const ProjectRoutes = () => {
-  let element = useRoutes([
-    { path: "/", element: <HomePage /> },
-    { path: "/about", element: <AboutPage /> },
-    // Add more routes as needed
-  ]);
+REST API – Returns recommendations in JSON format
 
-  return element;
-};
-```
+📋 Prerequisites
+Node.js (v14+)
 
-## 🎨 Styling
+Python 3.8+
 
-This project uses Tailwind CSS for styling. The configuration includes:
+pip (Python package manager)
 
-- Forms plugin for form styling
-- Typography plugin for text styling
-- Aspect ratio plugin for responsive elements
-- Container queries for component-specific responsive design
-- Fluid typography for responsive text
-- Animation utilities
+npm or yarn
 
-## 📱 Responsive Design
+🛠️ Installation
+1. Clone the Repository
+git clone https://github.com/your-username/streamflix.git
+cd streamflix
+2. Setup Frontend
+cd frontend
+npm install
+npm run dev
+3. Setup Backend (Python Environment)
+cd backend
+python -m venv venv
+source venv/bin/activate     # On Windows: venv\Scripts\activate
+pip install -r requirements.txt
+python app.py
 
-The app is built with responsive design using Tailwind CSS breakpoints.
+📁 Project Structure
 
+streamflix/
+├── frontend/              # React frontend
+│   ├── src/
+│   ├── public/
+│   ├── package.json
+│   └── ...
+├── backend/               # Python Flask backend
+│   ├── app.py             # Flask app
+│   ├── recommender.py     # ML-based recommender logic
+│   ├── fake_ratings.csv   # Dummy dataset
+│   └── requirements.txt
+🔗 API Example
+POST /recommend
 
-## 📦 Deployment
+Request Body:
 
-Build the application for production:
+{
+  "movie_id": 101
+}
+Response:
 
-```bash
+{
+  "recommended_movie_ids": [104, 102, 103]
+}
+🎨 Styling & UI
+Fully responsive UI
+
+Tailwind CSS with:
+
+Aspect ratio
+
+Forms & typography plugins
+
+Container queries
+
+Animation utilities
+
+📦 Deployment
+Frontend
+
 npm run build
-```
+Backend
+Consider using services like Render, Railway, or Heroku for deploying the Flask API.
+
+🧠 Future Improvements
+Switch to collaborative filtering
+
+Use a real dataset (e.g., MovieLens)
+
+Add user login and preferences
+
+Dockerize the full stack
+
+Add watchlist / favorite features
+
+👨‍💻 Author
+Sakshya Sinha – GitHub
 
